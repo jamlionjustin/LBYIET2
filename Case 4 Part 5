@@ -1,0 +1,67 @@
+Create database Case4Part5
+
+CREATE TABLE PHOTOBOOK
+(PB_ID CHAR (6) PRIMARY KEY,
+PB_SIZE CHAR (15),
+PB_PAGES INT,
+PB_PRICE INT);
+
+CREATE TABLE CUSTOMER
+(CUST_ID CHAR (9) PRIMARY KEY,
+CUST_LNAME CHAR (20),
+CUST_FNAME CHAR (20),
+CUST_HNUM INT,
+CUST_STREET CHAR (20),
+CUST_BRGY CHAR (20),
+CUST_CITY CHAR (20));
+
+CREATE TABLE AGENT
+(AGENT_ID CHAR (4) PRIMARY KEY,
+AGENT_LNAME CHAR (20),
+AGENT_FNAME CHAR (20));
+
+CREATE TABLE ORDERS
+(ORDER_NUM CHAR (6) PRIMARY KEY,
+DATE_ORDERED CHAR (30),
+AGENT_ID CHAR (4),
+CUST_ID CHAR (9),
+PB_ID CHAR (6),
+QTY_ORDERED INT,
+AMOUNT INT);
+
+INSERT INTO PHOTOBOOK (PB_ID, PB_SIZE, PB_PAGES, PB_PRICE)
+VALUES('PB1001', '8 in x 11 in', 20, 2000),
+('PB1002', '10 in x 10 in', 20, 2500),
+('PB1003', '8 in x 13 in', 20, 3500),
+('PB1004', '14 in x 11 in', 20, 4000);
+
+INSERT INTO CUSTOMER (CUST_ID, CUST_LNAME, CUST_FNAME, CUST_HNUM, CUST_STREET, CUST_BRGY, CUST_CITY)
+VALUES('CD1004231', 'Lucas', 'George', 22, 'Star', 'Galaxy', 'Pasig'),
+('CD1005392', 'Del Rey', 'Lana', 45, 'Kalamari', 'Ginisa', 'Cainta'),
+('CD1002581', 'Spears', 'Brittany', 30, 'Guyabano', 'Langka', 'Pasig'),
+('CD1014235', 'Malfoy', 'Drake', 59, 'Kamatis', 'Langka', 'Pasig'),
+('CD1098395', 'Sanders', 'Bert', 90, 'Oregano', 'Langka', 'Pasig'),
+('CD1028990', 'Rogers', 'Stephen', 91, 'Airwood', 'Galaxy', 'Pasig'),
+('CD1748209', 'Stark', 'Tanya', 33, 'Hipon', 'Ginisa', 'Cainta'),
+('CD1003823', 'Grande', 'Arianna', 55, 'Season', 'Ginisa', 'Cainta'),
+('CD1023492', 'Cage', 'Nicole', 77, 'Kapiling', 'Kapitan', 'Mandaluyong'),
+('CD1005823', 'Cayabab', 'James', 88, 'Kariton', 'Kapitan', 'Mandaluyong');
+
+INSERT INTO AGENT (AGENT_ID, AGENT_LNAME, AGENT_FNAME)
+VALUES('A202', 'Vidal', 'Maria'),
+('A203', 'Ginto', 'Raula'),
+('A206', 'Chinito', 'Kevin');
+
+INSERT INTO ORDERS (ORDER_NUM, DATE_ORDERED, AGENT_ID, CUST_ID, PB_ID, QTY_ORDERED, AMOUNT)
+VALUES('ON1234', 'July 5 2017', 'A202', 'CD004231', 'PB1001', 1, 2000),
+('ON1235', 'July 9 2017', 'A203', 'CD005392', 'PB1002', 1, 2500),
+('ON1236', 'August 3 2017', 'A203', 'CD002581', 'PB1001', 2, 4000),
+('ON1237', 'August 9 2017', 'A202', 'CD004231', 'PB1004', 1, 4000),
+('ON1238', 'August 14 2017', 'A203', 'CD098385', 'PB1002', 1, 2500),
+('ON1239', 'August 25 2017', 'A202', 'CD004231', 'PB1004', 2, 8000),
+('ON1240', 'September 8 2017', 'A206', 'CD098385', 'PB1002', 1, 2500),
+('ON1241', 'September 19 2017', 'A202', 'CD028990', 'PB1004', 1, 4000),
+('ON1242', 'September 22 2017', 'A206', 'CD028990', 'PB1002', 2, 2500),
+('ON1243', 'October 7 2017', 'A202', 'CD004231', 'PB1003', 1, 3500),
+('ON1244', 'October 9 2017', 'A206', 'CD023492', 'PB1001', 1, 2000),
+('ON1245', 'October 15 2017', 'A202', 'CD003824', 'PB1003', 2, 7000);
