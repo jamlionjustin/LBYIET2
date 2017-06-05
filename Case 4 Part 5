@@ -40,10 +40,10 @@ VALUES('CD1004231', 'Lucas', 'George', 22, 'Star', 'Galaxy', 'Pasig'),
 ('CD1005392', 'Del Rey', 'Lana', 45, 'Kalamari', 'Ginisa', 'Cainta'),
 ('CD1002581', 'Spears', 'Brittany', 30, 'Guyabano', 'Langka', 'Pasig'),
 ('CD1014235', 'Malfoy', 'Drake', 59, 'Kamatis', 'Langka', 'Pasig'),
-('CD1098395', 'Sanders', 'Bert', 90, 'Oregano', 'Langka', 'Pasig'),
+('CD1098385', 'Sanders', 'Bert', 90, 'Oregano', 'Langka', 'Pasig'),
 ('CD1028990', 'Rogers', 'Stephen', 91, 'Airwood', 'Galaxy', 'Pasig'),
 ('CD1748209', 'Stark', 'Tanya', 33, 'Hipon', 'Ginisa', 'Cainta'),
-('CD1003823', 'Grande', 'Arianna', 55, 'Season', 'Ginisa', 'Cainta'),
+('CD1003824', 'Grande', 'Arianna', 55, 'Season', 'Ginisa', 'Cainta'),
 ('CD1023492', 'Cage', 'Nicole', 77, 'Kapiling', 'Kapitan', 'Mandaluyong'),
 ('CD1005823', 'Cayabab', 'James', 88, 'Kariton', 'Kapitan', 'Mandaluyong');
 
@@ -53,15 +53,36 @@ VALUES('A202', 'Vidal', 'Maria'),
 ('A206', 'Chinito', 'Kevin');
 
 INSERT INTO ORDERS (ORDER_NUM, DATE_ORDERED, AGENT_ID, CUST_ID, PB_ID, QTY_ORDERED, AMOUNT)
-VALUES('ON1234', 'July 5 2017', 'A202', 'CD004231', 'PB1001', 1, 2000),
-('ON1235', 'July 9 2017', 'A203', 'CD005392', 'PB1002', 1, 2500),
-('ON1236', 'August 3 2017', 'A203', 'CD002581', 'PB1001', 2, 4000),
-('ON1237', 'August 9 2017', 'A202', 'CD004231', 'PB1004', 1, 4000),
-('ON1238', 'August 14 2017', 'A203', 'CD098385', 'PB1002', 1, 2500),
-('ON1239', 'August 25 2017', 'A202', 'CD004231', 'PB1004', 2, 8000),
-('ON1240', 'September 8 2017', 'A206', 'CD098385', 'PB1002', 1, 2500),
-('ON1241', 'September 19 2017', 'A202', 'CD028990', 'PB1004', 1, 4000),
-('ON1242', 'September 22 2017', 'A206', 'CD028990', 'PB1002', 2, 2500),
-('ON1243', 'October 7 2017', 'A202', 'CD004231', 'PB1003', 1, 3500),
-('ON1244', 'October 9 2017', 'A206', 'CD023492', 'PB1001', 1, 2000),
-('ON1245', 'October 15 2017', 'A202', 'CD003824', 'PB1003', 2, 7000);
+VALUES('ON1234', 'July 5 2017', 'A202', 'CD1004231', 'PB1001', 1, 2000),
+('ON1235', 'July 9 2017', 'A203', 'CD1005392', 'PB1002', 1, 2500),
+('ON1236', 'August 3 2017', 'A203', 'CD1002581', 'PB1001', 2, 4000),
+('ON1237', 'August 9 2017', 'A202', 'CD1004231', 'PB1004', 1, 4000),
+('ON1238', 'August 14 2017', 'A203', 'CD1098385', 'PB1002', 1, 2500),
+('ON1239', 'August 25 2017', 'A202', 'CD1004231', 'PB1004', 2, 8000),
+('ON1240', 'September 8 2017', 'A206', 'CD1098385', 'PB1002', 1, 2500),
+('ON1241', 'September 19 2017', 'A202', 'CD1028990', 'PB1004', 1, 4000),
+('ON1242', 'September 22 2017', 'A206', 'CD1028990', 'PB1002', 2, 2500),
+('ON1243', 'October 7 2017', 'A202', 'CD1004231', 'PB1003', 1, 3500),
+('ON1244', 'October 9 2017', 'A206', 'CD1023492', 'PB1001', 1, 2000),
+('ON1245', 'October 15 2017', 'A202', 'CD1003824', 'PB1003', 2, 7000);
+
+-- Numbers 1 to 3
+Select SUM(QTY_ORDERED) FROM ORDERS WHERE AGENT_ID = 'A206'
+
+--Numbers 4 to 6
+Select SUM(AMOUNT) FROM ORDERS WHERE CUST_ID = 'CD1028990'
+
+--Number 7
+Select ORDER_NUM, CUST_LNAME, CUST_FNAME, CUST_HNUM, CUST_STREET, CUST_BRGY, CUST_CITY, AGENT_ID AS ORDERED_FROM 
+FROM ORDERS LEFT JOIN CUSTOMER ON ORDERS.CUST_ID = CUSTOMER.CUST_ID
+
+--Number 8
+Select CUST_ID, PB_ID, QTY_ORDERED, AMOUNT FROM ORDERS
+
+--Number 9
+Select SUM(AMOUNT) FROM ORDERS LEFT JOIN CUSTOMER ON ORDERS.CUST_ID = CUSTOMER.CUST_ID
+WHERE PB_ID = 'PB1001' AND CUST_CITY = 'Pasig'
+
+--Number 10
+Select AVG(AMOUNT) FROM ORDERS LEFT JOIN CUSTOMER ON ORDERS.CUST_ID = CUSTOMER.CUST_ID
+WHERE (PB_ID = 'PB1001' AND CUST_CITY = 'Pasig') OR (PB_ID = 'PB1004' AND CUST_CITY = 'Cainta')
