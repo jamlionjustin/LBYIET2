@@ -1,1 +1,38 @@
+CREATE DATABASE Case5
 
+CREATE TABLE MANDALUYONG_BRANCH_SALES
+(TRANSACTION_NUM varchar (6),
+ITEM_NUM varchar (6),
+ITEM_NAME varchar (40),
+ITEM_PRICE INT,
+SALES_AGENT_NO varchar (5),
+SA_NAME varchar (40),
+QTY_SOLD INT,
+AMOUNT INT);
+
+INSERT INTO MANDALUYONG_BRANCH_SALES (TRANSACTION_NUM, ITEM_NUM, ITEM_NAME, SALES_AGENT_NO, SA_NAME, QTY_SOLD, AMOUNT)
+VALUES('B10001', 'MC1001', 'Weight Loss Powder', 800, 'SA556', 'Jonathan', 10, 8000),
+('B10002', 'MC1001', 'Weight Loss Powder', 800, 'SA777', 'Hilary', 10, 8000),
+('B10003', 'MC1001', 'Weight Loss Powder', 800, 'SA222', 'Lily', 10, 8000),
+('B10004', 'MC1003', 'Protein Shake', 650, 'SA022', 'Ivan', 20, 13000),
+('B10005', 'MC1005', 'Vitamin C Juice', 300, 'SA556', 'Jonathan', 20, 6000),
+('B10006', 'MC1006', 'Vitamin D Pills', 250, 'SA777', 'Hilary', 10, 2500),
+('B10007', 'MC1007', 'Vitamin D Juice', 300, 'SA022', 'Ivan', 20, 6000),
+('B10008', 'MC1008', 'Ginseng Tea', 450, 'SA222', 'Lily', 10, 4500),
+('B10009', 'MC1009', 'Aloe Extract', 200, 'SA556', 'Jonathan', 10, 2000),
+('B10010', 'MC1001', 'Weight Loss Powder', 800, 'SA022', 'Ivan', 20, 16000),
+('B10011', 'MC1003', 'Protein Shake', 650, 'SA777', 'Hilary', 10, 6500),
+('B10012', 'MC1003', 'Protein Shake', 650, 'SA222', 'Lily', 10, 6500),
+('B10013', 'MC1003', 'Protein Shake', 650, 'SA556', 'Jonathan', 20, 13000),
+('B10014', 'MC1005', 'Vitamin C Juice', 300, 'SA022', 'Ivan', 10, 3000),
+('B10015', 'MC1005', 'Vitamin C Juice', 300, 'SA777', 'Hilary', 10, 3000),
+('B10016', 'MC1009', 'Aloe Extract', 200, 'SA222', 'Lily', 20, 4000),
+('B10017', 'MC1006', 'Vitamin D Pills', 250, 'SA556', 'Jonathan', 10, 2500),
+('B10018', 'MC1007', 'Vitamin D Juice', 300, 'SA022', 'Ivan', 10, 3000),
+('B10019', 'MC1009', 'Aloe Extract', 200, 'SA022', 'Ivan', 10, 2000),
+('B10020', 'MC1003', 'Protein Shake', 650, 'SA777', 'Hilary', 20, 13000),
+('B10021', 'MC1006', 'Vitamin D Pills', 250, 'SA556', 'Jonathan', 10, 2500),
+('B10022', 'MC1006', 'Vitamin D Pills', 250, 'SA022', 'Ivan', 10, 2500),
+('B10023', 'MC1003', 'Protein Shake', 650, 'SA022', 'Ivan', 20, 13000),
+('B10024', 'MC1009', 'Aloe Extract', 200, 'SA777', 'Hilary', 10, 2000),
+('B10025', 'MC1009', 'Aloe Extract', 200, 'SA556', 'Jonathan', 10, 2000);
