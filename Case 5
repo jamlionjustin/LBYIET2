@@ -36,3 +36,5 @@ VALUES('B10001', 'MC1001', 'Weight Loss Powder', 800, 'SA556', 'Jonathan', 10, 8
 ('B10023', 'MC1003', 'Protein Shake', 650, 'SA022', 'Ivan', 20, 13000),
 ('B10024', 'MC1009', 'Aloe Extract', 200, 'SA777', 'Hilary', 10, 2000),
 ('B10025', 'MC1009', 'Aloe Extract', 200, 'SA556', 'Jonathan', 10, 2000);
+
+S
