@@ -1,5 +1,21 @@
 CREATE DATABASE Case5
 
+
+CREATE TABLE ITEM
+(ITEM_NUM VARCHAR (20) PRIMARY KEY,
+ITEM_NAME VARCHAR (30),
+ITEM_PRICE INT);
+
+CREATE TABLE PASIG_BRANCH_SALES
+(TRANSACTION_NUM VARCHAR (30) PRIMARY KEY,
+ITEM_NUM VARCHAR (20),
+ITEM_NAME VARCHAR (30),
+ITEM_PRICE INT,
+SALES_AGENT_NO VARCHAR (5),
+SA_NAME VARCHAR (20),
+QTY_SOLD INT,
+AMOUNT INT);
+
 CREATE TABLE MANDALUYONG_BRANCH_SALES
 (TRANSACTION_NUM varchar (6),
 ITEM_NUM varchar (6),
@@ -9,6 +25,44 @@ SALES_AGENT_NO varchar (5),
 SA_NAME varchar (40),
 QTY_SOLD INT,
 AMOUNT INT);
+
+INSERT INTO ITEM (ITEM_NUM, ITEM_NAME, ITEM_PRICE)
+VALUES
+('MC1001','Weight Loss Powder','800'),
+('MC1002','Weight Gain Powder','800'),
+('MC1003','Protein Shake','650'),
+('MC1004','Vitamin C Pills','250'),
+('MC1005','Vitamin C Juice','300'),
+('MC1006','Vitamin D Pills','250'),
+('MC1007','Vitamin D Juice','300'),
+('MC1008','Ginseng Tea','450'),
+('MC1009','Aloe Extract','200');
+
+INSERT INTO PASIG_BRANCH_SALES (TRANSACTION_NUM, ITEM_NUM, ITEM_NAME, ITEM_PRICE, SALES_AGENT_NO, SA_NAME, QTY_SOLD, AMOUNT)
+VALUES
+('P10001','MC1001','Weight Loss Powder','800','SA101','John','10','8000'),
+('P10002','MC1002','Weight Gain Powder','800','SA203','Curry','20','16000'),
+('P10003','MC1001','Weight Loss Powder','800','SA101','John','10','8000'),
+('P10004','MC1001','Weight Loss Powder','800','SA101','John','10','8000'),
+('P10005','MC1003','Protein Shake','650','SA102','James','20','13000'),
+('P10006','MC1004','Vitamin C Pills','250','SA443','Smith','15','3750'),
+('P10007','MC1005','Vitamin C Juice','300','SA101','John','20','6000'),
+('P10008','MC1006','Vitamin D Pills','250','SA203','Curry','20','5000'),
+('P10009','MC1007','Vitamin D Juice','300','SA443','Smith','10','3000'),
+('P10010','MC1008','Ginseng Tea','450','SA555','Andy','10','4500'),
+('P10011','MC1001','Weight Loss Powder','800','SA101','John','10','8000'),
+('P10012','MC1002','Weight Gain Powder','800','SA555','Andy','10','8000'),
+('P10013','MC1003','Protein Shake','650','SA443','Smith','20','13000'),
+('P10014','MC1003','Protein Shake','650','SA101','John','20','13000'),
+('P10015','MC1002','Weight Gain Powder','800','SA203','Curry','10','8000'),
+('P10016','MC1003','Protein Shake','650','SA555','Andy','10','6500'),
+('P10017','MC1005','Vitamin C Juice','300','SA555','Andy','20','6000'),
+('P10018','MC1002','Weight Gain Powder','800','SA203','Curry','10','8000'),
+('P10019','MC1004','Vitamin C Pills','250','SA203','Curry','10','2500'),
+('P10020','MC1005','Vitamin C Juice','300','SA101','John','20','6000'),
+('P10021','MC1004','Vitamin C Pills','250','SA555','Andy','10','2500'),
+('P10022','MC1006','Vitamin D Pills','250','SA101','John','20','5000'),
+('P10023','MC1007','Vitamin D Juice','300','SA101','John','10','3000');
 
 INSERT INTO MANDALUYONG_BRANCH_SALES (TRANSACTION_NUM, ITEM_NUM, ITEM_NAME, SALES_AGENT_NO, SA_NAME, QTY_SOLD, AMOUNT)
 VALUES('B10001', 'MC1001', 'Weight Loss Powder', 800, 'SA556', 'Jonathan', 10, 8000),
@@ -37,4 +91,4 @@ VALUES('B10001', 'MC1001', 'Weight Loss Powder', 800, 'SA556', 'Jonathan', 10, 8
 ('B10024', 'MC1009', 'Aloe Extract', 200, 'SA777', 'Hilary', 10, 2000),
 ('B10025', 'MC1009', 'Aloe Extract', 200, 'SA556', 'Jonathan', 10, 2000);
 
-S
+
