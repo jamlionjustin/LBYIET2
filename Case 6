@@ -73,3 +73,79 @@ VALUES('T1001', '2017-06-01', 'SA101', 101, 'H101', 1500000),
 ('T1013', '2017-06-14', 'SA103', 104, 'H103', 2800000),
 ('T1014', '2017-06-14', 'SA103', 120, 'H103', 2800000),
 ('T1015', '2017-06-15', 'SA102', 119, 'H102', 2000000);
+
+--1 to 5
+BEGIN TRAN
+SAVE TRAN point5
+SELECT SUM(Amount) AS Total_Sold FROM Sales WHERE SA_Num = 'SA105'
+
+--6
+SAVE TRAN point6
+ALTER TABLE Sales_Agent ADD Contributed_Sales INT
+SELECT * FROM Sales_Agent
+
+--7 to 11
+SAVE TRAN point11
+UPDATE Sales_Agent SET Contributed_Sales = (SELECT SUM(Amount) FROM Sales 
+WHERE SA_Num = 'SA105') WHERE SA_Num = 'SA105'
+SELECT * FROM Sales_Agent
+
+--12
+SAVE TRAN point12
+SELECT * FROM Sales_Agent ORDER BY Contributed_Sales DESC
+
+--13
+SAVE TRAN point13
+DELETE FROM Sales_Agent WHERE Contributed_Sales < 6000000
+SELECT * FROM Sales_Agent
+
+--14
+SAVE TRAN point14
+ROLLBACK TRAN point13
+SELECT * FROM Sales_Agent
+
+--15
+SAVE TRAN point15
+ROLLBACK TRAN point6
+SELECT * FROM Sales_Agent
+
+--16
+SAVE TRAN point16
+ALTER TABLE Sales_Agent ADD Total_Earnings INT
+SELECT * FROM Sales_Agent
+
+--17 to 21
+SAVE TRAN point21
+SELECT SUM(Amount)*(SELECT Commission FROM Sales_Agent WHERE SA_Num = 'SA105') 
+AS Total_Earnings FROM Sales WHERE SA_Num = 'SA105' 
+
+--22 to 26
+SAVE TRAN point26
+UPDATE Sales_Agent SET Total_Earnings = ((SELECT SUM(Amount) FROM Sales 
+WHERE SA_Num = 'SA105')*(SELECT Commission FROM Sales_Agent 
+WHERE SA_Num = 'SA105')) WHERE SA_Num = 'SA105'
+SELECT * FROM Sales_Agent
+
+--27
+SAVE TRAN point27
+COMMIT TRAN point27
+
+--28
+BEGIN TRAN
+SAVE TRAN point28
+SELECT DISTINCT Condo_Units.Unit_No, 'For Sale' AS Status
+FROM Condo_Units
+LEFT OUTER JOIN
+Sales ON Condo_Units.Unit_No = Sales.Unit_No
+WHERE Sales.Unit_No IS NULL;
+
+--29
+SAVE TRAN point29
+SELECT DISTINCT Sales.Unit_No, 'Sold' AS Status FROM Sales
+INTERSECT
+SELECT DISTINCT Condo_Units.Unit_No, 'Sold' AS Status FROM Condo_Units
+
+--30
+SAVE TRAN point30
+ALTER TABLE Condo_Units ADD Condo_Status VARCHAR (10)
+SELECT * FROM Condo_Units
