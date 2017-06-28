@@ -1,0 +1,75 @@
+CREATE DATABASE Case6
+
+CREATE TABLE Sales_Agent
+(SA_Num VARCHAR (5),
+SA_Name VARCHAR (20),
+Commission FLOAT);
+
+CREATE TABLE Condo_Model
+(Condo_Code VARCHAR (4),
+Condo_Type VARCHAR (20),
+Condo_Price INT);
+
+CREATE TABLE Condo_Units
+(Unit_No INT,
+Condo_Code VARCHAR (4),
+Unit_Floor VARCHAR (3));
+
+CREATE TABLE Sales
+(Trans_No VARCHAR (5),
+Trans_Date DATE,
+SA_Num VARCHAR (5),
+Unit_No INT,
+Condo_Code VARCHAR (4),
+Amount INT);
+
+INSERT INTO Sales_Agent (SA_Num, SA_Name, Commission)
+VALUES('SA101', 'Anthony', 0.05),
+('SA102', 'Mark', 0.02),
+('SA103', 'John', 0.06),
+('SA104', 'Lisa', 0.03),
+('SA105', 'Alice', 0.05);
+
+INSERT INTO Condo_Model (Condo_Code, Condo_Type, Condo_Price)
+VALUES('H101', 'Studio', 1500000),
+('H102', 'One Bedroom', 2000000),
+('H103', 'Two Bedroom', 2800000);
+
+INSERT INTO Condo_Units (Unit_No, Condo_Code, Unit_Floor)
+VALUES(101, 'H101', '1st'),
+(102, 'H101', '1st'),
+(103, 'H102', '1st'),
+(104, 'H103', '1st'),
+(105, 'H101', '2nd'),
+(106, 'H101', '2nd'),
+(107, 'H102', '2nd'),
+(108, 'H103', '2nd'),
+(109, 'H101', '3rd'),
+(110, 'H101', '3rd'),
+(111, 'H102', '3rd'),
+(112, 'H103', '3rd'),
+(113, 'H101', '4th'),
+(114, 'H101', '4th'),
+(115, 'H102', '4th'),
+(116, 'H103', '4th'),
+(117, 'H101', '5th'),
+(118, 'H101', '5th'),
+(119, 'H102', '5th'),
+(120, 'H103', '5th');
+
+INSERT INTO Sales (Trans_No, Trans_Date, SA_Num, Unit_No, Condo_Code, Amount)
+VALUES('T1001', '2017-06-01', 'SA101', 101, 'H101', 1500000),
+('T1002', '2017-06-02', 'SA103', 102, 'H101', 1500000),
+('T1003', '2017-06-02', 'SA101', 105, 'H101', 1500000),
+('T1004', '2017-06-02', 'SA104', 106, 'H101', 1500000),
+('T1005', '2017-06-05', 'SA102', 108, 'H103', 2800000),
+('T1006', '2017-06-06', 'SA104', 109, 'H101', 1500000),
+('T1007', '2017-06-11', 'SA101', 111, 'H102', 2000000),
+('T1008', '2017-06-12', 'SA105', 114, 'H101', 1500000),
+('T1009', '2017-06-12', 'SA102', 116, 'H103', 2800000),
+('T1010', '2017-06-12', 'SA105', 112, 'H103', 2800000),
+('T1011', '2017-06-13', 'SA101', 113, 'H101', 1500000),
+('T1012', '2017-06-14', 'SA104', 103, 'H102', 2000000),
+('T1013', '2017-06-14', 'SA103', 104, 'H103', 2800000),
+('T1014', '2017-06-14', 'SA103', 120, 'H103', 2800000),
+('T1015', '2017-06-15', 'SA102', 119, 'H102', 2000000);
