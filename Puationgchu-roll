@@ -10,12 +10,12 @@
 {{$dd := " "}}
 {{$ee := " "}}
 {{$ff := " "}}
-{{$a := (toString (randInt 5) )}}
-{{$b := (toString (randInt 5) )}}
-{{$c := (toString (randInt 5) )}}
-{{$d := (toString (randInt 5) )}}
-{{$e := (toString (randInt 5) )}}
-{{$f := (toString (randInt 5) )}}
+{{$a := (toString (randInt 6) )}}
+{{$b := (toString (randInt 6) )}}
+{{$c := (toString (randInt 6) )}}
+{{$d := (toString (randInt 6) )}}
+{{$e := (toString (randInt 6) )}}
+{{$f := (toString (randInt 6) )}}
 {{if eq $a "0"}} {{ $aa = $d0 }} {{end}}
 {{if eq $a "1"}} {{ $aa = $d1 }} {{end}}
 {{if eq $a "2"}} {{ $aa = $d2 }} {{end}}
@@ -56,12 +56,12 @@
 {{$ID2 := sendMessageNoEscapeRetID nil "Rolling!"}}
 
 {{sleep 1}}
-{{$a := (toString (randInt 5) )}}
-{{$b := (toString (randInt 5) )}}
-{{$c := (toString (randInt 5) )}}
-{{$d := (toString (randInt 5) )}}
-{{$e := (toString (randInt 5) )}}
-{{$f := (toString (randInt 5) )}}
+{{$a := (toString (randInt 6) )}}
+{{$b := (toString (randInt 6) )}}
+{{$c := (toString (randInt 6) )}}
+{{$d := (toString (randInt 6) )}}
+{{$e := (toString (randInt 6) )}}
+{{$f := (toString (randInt 6) )}}
 {{if eq $a "0"}} {{ $aa = $d0 }} {{end}}
 {{if eq $a "1"}} {{ $aa = $d1 }} {{end}}
 {{if eq $a "2"}} {{ $aa = $d2 }} {{end}}
@@ -101,12 +101,12 @@
 {{editMessageNoEscape nil $ID (joinStr " " $aa $bb $cc $dd $ee $ff) }}
 
 {{sleep 1}}
-{{$a := (toString (randInt 5) )}}
-{{$b := (toString (randInt 5) )}}
-{{$c := (toString (randInt 5) )}}
-{{$d := (toString (randInt 5) )}}
-{{$e := (toString (randInt 5) )}}
-{{$f := (toString (randInt 5) )}}
+{{$a := (toString (randInt 6) )}}
+{{$b := (toString (randInt 6) )}}
+{{$c := (toString (randInt 6) )}}
+{{$d := (toString (randInt 6) )}}
+{{$e := (toString (randInt 6) )}}
+{{$f := (toString (randInt 6) )}}
 {{if eq $a "0"}} {{ $aa = $d0 }} {{end}}
 {{if eq $a "1"}} {{ $aa = $d1 }} {{end}}
 {{if eq $a "2"}} {{ $aa = $d2 }} {{end}}
@@ -146,12 +146,12 @@
 {{editMessageNoEscape nil $ID (joinStr " " $aa $bb $cc $dd $ee $ff) }}
 
 {{sleep 1}}
-{{$a := (toString (randInt 5) )}}
-{{$b := (toString (randInt 5) )}}
-{{$c := (toString (randInt 5) )}}
-{{$d := (toString (randInt 5) )}}
-{{$e := (toString (randInt 5) )}}
-{{$f := (toString (randInt 5) )}}
+{{$a := (toString (randInt 6) )}}
+{{$b := (toString (randInt 6) )}}
+{{$c := (toString (randInt 6) )}}
+{{$d := (toString (randInt 6) )}}
+{{$e := (toString (randInt 6) )}}
+{{$f := (toString (randInt 6) )}}
 {{if eq $a "0"}} {{ $aa = $d0 }} {{end}}
 {{if eq $a "1"}} {{ $aa = $d1 }} {{end}}
 {{if eq $a "2"}} {{ $aa = $d2 }} {{end}}
@@ -194,10 +194,10 @@
 {{editMessageNoEscape nil $ID2 (joinStr "            " $a $b) }}
 
 {{sleep 1}}
-{{$c := (toString (randInt 5) )}}
-{{$d := (toString (randInt 5) )}}
-{{$e := (toString (randInt 5) )}}
-{{$f := (toString (randInt 5) )}}
+{{$c := (toString (randInt 6) )}}
+{{$d := (toString (randInt 6) )}}
+{{$e := (toString (randInt 6) )}}
+{{$f := (toString (randInt 6) )}}
 {{if eq $c "0"}} {{ $cc = $d0 }} {{end}}
 {{if eq $c "1"}} {{ $cc = $d1 }} {{end}}
 {{if eq $c "2"}} {{ $cc = $d2 }} {{end}}
@@ -229,8 +229,8 @@
 
 
 {{sleep 1}}
-{{$e := (toString (randInt 5) )}}
-{{$f := (toString (randInt 5) )}}
+{{$e := (toString (randInt 6) )}}
+{{$f := (toString (randInt 6) )}}
 {{if eq $e "0"}} {{ $ee = $d0 }} {{end}}
 {{if eq $e "1"}} {{ $ee = $d1 }} {{end}}
 {{if eq $e "2"}} {{ $ee = $d2 }} {{end}}
